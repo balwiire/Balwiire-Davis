@@ -1,51 +1,26 @@
-# Cost-of-Illness Toolkit
+# Hi, I'm Davis 👋
 
-Small, reusable pipeline for estimating direct medical costs from routine facility-level visit data — the kind of calculation used in health economics cost-of-illness studies.
+Epidemiologist & health data scientist working at the intersection of **public health, health economics, and machine learning**. I like turning messy routine data into models and reports that actually inform decisions.
 
-## What it does
+- 🎓 MSc Epidemiology & Biomedical Data Science — University of Oulu
+- 🎓 MSc Public Health / Health Economics — Umeå University
+- 🔬 Currently working on disease forecasting (ML) and cost-of-illness estimation using large-scale routine health surveillance data
+- 🧬 Background in genomic/methylation data analysis (NFBC1986 cohort)
+- 🌍 Focus country: Uganda | Based in Finland
 
-- **Unit costing** (`unit_costing.py`): applies per-visit outpatient/inpatient unit costs to facility-month visit counts, with a CPI-adjustment helper to bring historical unit costs into a target price year
-- **Winsorization** (`winsorize.py`): caps outlier facility-month observations (e.g. data-entry spikes) at configurable percentiles, and reports exactly how many rows were affected so the adjustment is auditable rather than silent
-- **Summaries**: aggregate total cost, and outpatient/inpatient cost share, by any grouping (district, facility type, year)
+## What I work with
 
-## Why this matters
+`Python` `SQL` `XGBoost` `scikit-learn` `pandas` `Jupyter` `R` `Power BI` (learning)
 
-Cost-of-illness estimates are sensitive to a few decisions that are easy to get wrong or leave undocumented: which unit cost source to use, how to adjust it for inflation, and how to handle outliers. This toolkit makes each of those steps an explicit, testable function rather than an ad hoc notebook cell.
+## Featured projects
 
-## Structure
+| Project | Description |
+|---|---|
+| [malaria-forecasting-pipeline](#) | District-level disease case forecasting using XGBoost, Random Forest & Poisson models across age-sex strata; includes a writeup on a data-leakage bug I caught and fixed in feature selection |
+| [cost-of-illness-toolkit](#) | Reusable pipeline for estimating direct medical costs from routine facility data — unit costing, CPI adjustment, outlier winsorization |
+| [results-table-automation](#) | Scripts that turn raw model output into manuscript-ready summary tables automatically |
 
-```
-src/unit_costing.py   # unit cost application + CPI adjustment
-src/winsorize.py       # outlier capping with reporting
-requirements.txt
-```
+## Currently learning
+Snowflake, Power BI, and how to bring reporting-automation habits from research into business analytics contexts.
 
-## Example
-
-**Python:**
-```python
-from unit_costing import UnitCosts, cpi_adjust, estimate_costs, summarize
-from winsorize import winsorize_column
-
-costs_2022 = UnitCosts(outpatient=5.84, inpatient=19.77, price_year=2022)
-costs_2024 = cpi_adjust(costs_2022, cpi_multiplier=1.099, target_year=2024)
-
-df = winsorize_column(df, "op_episodes")
-df = estimate_costs(df, costs_2024)
-summary = summarize(df, group_cols=["district", "year"])
-```
-
-**R** (equivalent implementation in `r/`):
-```r
-source("r/unit_costing.R")
-source("r/winsorize.R")
-
-costs_2022 <- make_unit_costs(outpatient = 5.84, inpatient = 19.77, price_year = 2022)
-costs_2024 <- cpi_adjust(costs_2022, cpi_multiplier = 1.099, target_year = 2024)
-
-df <- winsorize_column(df, "op_episodes")
-df <- estimate_costs(df, costs_2024)
-summary <- summarize_costs(df, group_cols = c("district", "year"))
-```
-
-Uses only base R — no extra packages required.
+📫 Reach me at [your email] or [LinkedIn]
