@@ -1,29 +1,26 @@
-# GitHub Portfolio Scaffold
+# Hi, I'm Davis 👋
 
-Four ready-to-push repos:
+Epidemiologist & health data scientist working at the intersection of **public health, health economics, and machine learning**. I like turning messy routine data into models and reports that actually inform decisions.
 
-1. **profile-repo/** — your GitHub profile README (rename to your username when creating the repo)
-2. **malaria-forecasting-pipeline/** — ML disease forecasting demo (synthetic data, XGBoost/RF/Poisson, leakage guard)
-3. **cost-of-illness-toolkit/** — health economics unit costing + CPI adjustment + winsorization
-4. **results-table-automation/** — CSV → Markdown/Word results table CLI
+- 🎓 MSc Epidemiology & Biomedical Data Science — University of Oulu
+- 🎓 MSc Public Health / Health Economics — Umeå University
+- 🔬 Currently working on disease forecasting (ML) and cost-of-illness estimation using large-scale routine health surveillance data
+- 🧬 Background in genomic/methylation data analysis (NFBC1986 cohort)
+- 🌍 Focus country: Uganda | Based in Finland
 
-All three code projects have been run end-to-end and work as-is, in **both Python and R**. Each project's `src/` folder has the Python version; each has a sibling `r/` folder with an equivalent R implementation (using `randomForest`/`gbm` in place of scikit-learn/XGBoost, and `knitr`/`officer` in place of pandas/python-docx). Both language versions were tested and produce consistent results — see each project's README for run instructions in either language.
+## What I work with
 
-## Quick start
+`Python` `SQL` `XGBoost` `scikit-learn` `pandas` `Jupyter` `R` `Power BI` (learning)
 
-```bash
-export GITHUB_USERNAME=your-github-username
-./setup.sh
-```
+## Featured projects
 
-This git-inits each folder, makes an initial commit, and — if you have the
-GitHub CLI (`gh`) installed and logged in (`gh auth login`) — creates the
-repo on GitHub and pushes it automatically. Without `gh`, it prints the
-manual `git remote add` / `push` steps instead.
+| Project | Description |
+|---|---|
+| [malaria-forecasting-pipeline](#) | District-level disease case forecasting using XGBoost, Random Forest & Poisson models across age-sex strata; includes a writeup on a data-leakage bug I caught and fixed in feature selection |
+| [cost-of-illness-toolkit](#) | Reusable pipeline for estimating direct medical costs from routine facility data — unit costing, CPI adjustment, outlier winsorization |
+| [results-table-automation](#) | Scripts that turn raw model output into manuscript-ready summary tables automatically |
 
-## Before you push
+## Currently learning
+Snowflake, Power BI, and how to bring reporting-automation habits from research into business analytics contexts.
 
-- Edit `profile-repo/README.md`: fill in your email/LinkedIn, remove the
-  `(#)` placeholder links in the project table once repos are live
-- Double check no real/confidential data ever gets committed — these repos
-  are pre-loaded with synthetic data generators, not your real datasets
+📫 Reach me at [your email] or [LinkedIn]
